@@ -13,4 +13,8 @@ export class AlumnosService{
     getAlumnos(): Observable<Alumno[]>{
         return this.http.get<Alumno[]>('https://localhost:44394/Api/Alumnos');
     }
+
+    getAlumno(id: number): Observable<Alumno>{
+        return this.http.get<Alumno>('https://localhost:44394/Api/Alumnos/'+ id);
+    }
 }

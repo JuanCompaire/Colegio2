@@ -9,6 +9,7 @@ import { AlumnosService } from './AlumnosService';
     standalone: true,
     imports: [CommonModule, RouterOutlet],
     providers: [AlumnosService],
+    styleUrl: './Alumno.component.css',
     templateUrl: './AlumnoLista.component.html'
 })
 
