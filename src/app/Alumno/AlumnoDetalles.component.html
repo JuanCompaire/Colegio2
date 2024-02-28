@@ -1,0 +1,50 @@
+export interface IAlumno {//Esto es una interfaz que sirve para definir los atributos de un objeto, en este caso de un alumno
+    ID: number;
+    Nombre: string;
+    Apellidos: string;
+    Direccion: string;
+    FNac: string;
+    Sexo: string;
+}
+
+export class Alumno implements IAlumno {//Esto es una clase que sirve para crear objetos de tipo alumno
+    constructor( //al poner el public delante de cada atributo, se crea automáticamente el atributo y se le asigna el valor que se le pasa por parámetro
+        public ID: number,
+        public Nombre: string,
+        public Apellidos: string,
+        public Direccion: string,
+        public FNac: string,
+        public Sexo: string
+    ) { }
+} 
+//Tabla que muestre los datos del alumno que se ha seleccionado en la tabla de alumnos y que se recibe el ID
+
+<!-- Path: src/app/Alumnos/AlumnoDetalles.component.html -->
+<div class="container">
+    <h1>Detalles del alumno</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <td>{{alumno.ID}}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{alumno.Nombre}}</td>
+        </tr>
+        <tr>
+            <th>Apellidos</th>
+            <td>{{alumno.Apellidos}}</td>
+        </tr>
+        <tr>
+            <th>Dirección</th>
+            <td>{{alumno.Direccion}}</td>
+        </tr>
+        <tr>
+            <th>Fecha de nacimiento</th>
+            <td>{{alumno.FNac}}</td>
+        </tr>
+        <tr>
+            <th>Sexo</th>
+            <td>{{alumno.Sexo}}</td>
+        </tr>
+    </table>

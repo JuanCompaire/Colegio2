@@ -1,14 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, RouterModule, HttpClientModule],
+  template:`
+    <div style="padding: 10px">
+      <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Alumnos">Alumnos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Cursos">Cursos</a>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'Colegio2';
 }
