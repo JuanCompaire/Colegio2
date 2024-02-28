@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IAlumno, Alumno } from './Alumno';
 import { AlumnosService } from './AlumnosService';
+import { AlumnoTituloPipe} from './AlumnoTitulo.pipe';
+import {AlumnoSexoPipe} from './AlumnoSexo.pipe';
+import {RouterModule} from '@angular/router';
 
 @Component({
     selector: 'lista-alumnos',
     standalone: true,
-    imports: [CommonModule, RouterOutlet],
+    imports: [CommonModule,RouterModule, RouterOutlet,AlumnoTituloPipe,AlumnoSexoPipe],
     providers: [AlumnosService],
     styleUrl: './Alumno.component.css',
     templateUrl: './AlumnoLista.component.html'

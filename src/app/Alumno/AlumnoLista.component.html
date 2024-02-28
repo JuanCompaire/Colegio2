@@ -5,22 +5,26 @@
     <tr>
       <th>ID</th>
       <th>Nombre</th>
-      <th>Apellidos</th>
       <th>Sexo</th>
-      <th>Fecha de Nacimiento</th>
+      <th>Fecha de Nacimiento</th>  
       <th>Dirección</th>
       <th>Curso</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let alumno of alumnos">
-      <td>{{ alumno.ID }}</td>
-      <td>{{ alumno.nombre }}</td>
-      <td>{{ alumno.apellidos }}</td>
-      <td>{{ alumno.sexo }}</td>
-      <td>{{ alumno.fnac }}</td>
-      <td>{{ alumno.direccion }}</td>
-      <td>{{ alumno.cursoID}}</td>
+    <ng-container style="text-align: center;" *ngFor="let alumno of alumnos">
+        <tr>
+            <td>{{ alumno.ID}}</td>
+            <td><a [routerLink]="['/Alumnos', alumno.ID]">{{alumno.nombre | uppercase | alumnoTitulo:alumno.sexo}} {{alumno.apellidos}}</a></td>
+            <td>{{ alumno.sexo | alumnoSexo:alumno.sexo}}</td>
+            <td>{{ alumno.fnac | date:'dd MMM y'}}</td>
+            <td>{{ alumno.direccion}}</td>
+            <td>{{ alumno.cursoID}}</td>
+        </tr>
+    </ng-container>
+    
+    <tr *ngIf="!alumnos || alumnos.length == 0">
+        <td colspan="4">No hay alumnos</td>
     </tr>
-  </tbody>
+</tbody>
 </table>
