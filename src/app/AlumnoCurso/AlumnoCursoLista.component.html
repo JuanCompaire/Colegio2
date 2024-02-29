@@ -1,0 +1,26 @@
+<h2>Listado de Alumnos</h2>
+
+<CursoDesplegable (CursoSeleccionado)="cargarCurso($event)"></CursoDesplegable>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Fecha Nacimiento</th>
+            <th>Sexo</th>
+            <th>CursoID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let alumno of alumnos">
+            <tr *ngIf="seleccion == 800 || seleccion == alumno.cursoID">
+                <td><a [routerLink]="['/Alumnos', alumno.ID]" >{{alumno.nombre }} {{alumno.apellidos}}</a></td>
+                <td>{{alumno.direccion}}</td>
+                <td>{{alumno.fnac | date: 'dd/MMM/y'}}</td>
+                <td>{{alumno.sexo}}</td>
+                <td>{{alumno.cursoID}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+

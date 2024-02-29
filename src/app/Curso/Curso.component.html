@@ -3,37 +3,20 @@
     <table class="w-50 table table-sm table-bordered ">
         <thead>
             <tr>
-                <th colspan="2">{{alumno.nombre}} {{alumno.apellidos}}</th> 
+                <th colspan="2">Curso</th> <!--otra forma de indireccionamiento más, interpolación-->
             </tr>
         </thead>
-    <br><br>
         <tbody>
             <tr>
                 <td>Id</td>
-                <td>{{alumno.ID}}</td>
+                <td>{{curso.ID}}</td>
             <tr>
                 <td>Nombre</td>
-                <td>{{alumno.nombre}}</td>
+                <td>{{curso.ano}}</td>
             </tr>
             <tr>
                 <td>Apellidos</td>
-                <td>{{alumno.apellidos}}</td>
-            </tr>
-            <tr>
-                <td>Direccion</td>
-                <td>{{alumno.direccion}}</td>
-            </tr>
-            <tr >
-                <td>Fecha de Nacimiento</td>
-                <td>{{alumno.fnac | date:'dd-MMMM-YYYY'}}</td>
-            </tr>
-            <tr>
-                <td>Sexo</td>
-                <td>{{alumno.sexo}}</td>
-            </tr>
-            <tr>
-                <td>Curso</td>
-                <td>{{alumno.cursoID}}</td>
+                <td>{{curso.letra}}</td>
             </tr>
         </tbody>
     </table>

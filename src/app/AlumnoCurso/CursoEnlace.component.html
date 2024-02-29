@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let curso of cursos">
+            <tr>
+                <td><a (click)="mostrarAlumnos(curso.ID)" [routerLink]="['/AlumnosDeCurso/', curso.ID]">{{curso.ano}} {{curso.letra}}</a></td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

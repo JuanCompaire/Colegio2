@@ -1,0 +1,24 @@
+<h2>Listado de cursos</h2>
+<cuantos-cursos [todos]="getNumTodos()"
+                [letraA] = "getNumA()"
+                [letraB] = "getNumB()"
+                (globalElegido) = "alCambiar($event)"
+></cuantos-cursos>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Año</th>
+            <th>Letra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container style="text-align: center;" *ngFor="let curso of cursos">
+            <tr>
+                <td><a [routerLink]="['/Cursos',curso.ID]">{{curso.ID}}</a></td>
+                <td>{{curso.ano}}</td>
+                <td>{{curso.letra}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

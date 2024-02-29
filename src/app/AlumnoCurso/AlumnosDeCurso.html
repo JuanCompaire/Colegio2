@@ -1,0 +1,21 @@
+<table > 
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Dirección</th>
+            <th>Sexo</th>
+            <th>Padre</th>
+        </tr>       
+    <tbody>
+        <ng-container *ngFor="let alumno of alumnos">
+            <tr><!--no se pueden poner dos directivas el mismo elemento-->
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellidos}}</td>
+                <td>{{alumno.direccion}}</td>
+                <td>{{alumno.sexo}}</td>
+                <td>{{alumno.sexo}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

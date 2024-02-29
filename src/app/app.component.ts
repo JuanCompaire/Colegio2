@@ -16,6 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
         <li class="nav-item">
           <a class="nav-link" routerLink="/Cursos">Cursos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/AlumnosCurso">AlumnosCurso</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/AlumnosDeCurso/:id">AlumnosDeCurso</a>
+        </li>
       </ul>
       <router-outlet></router-outlet>
     </div>

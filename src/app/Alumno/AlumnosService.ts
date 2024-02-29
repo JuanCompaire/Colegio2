@@ -11,10 +11,14 @@ export class AlumnosService{
     constructor(private http: HttpClient){}
 
     getAlumnos(): Observable<Alumno[]>{
-        return this.http.get<Alumno[]>('https://localhost:44394/Api/Alumnos');
+        return this.http.get<Alumno[]>('https://localhost:44394/Api/Alumnos/Get');
     }
 
     getAlumno(id: number): Observable<Alumno>{
-        return this.http.get<Alumno>('https://localhost:44394/Api/Alumnos/' + id);
+        return this.http.get<Alumno>('https://localhost:44394/Api/Alumnos/Get2/' + id);
+    }
+
+    getAlumnosPorCurso(id:number): Observable<Alumno[]>{
+        return this.http.get<Alumno[]>(`https://localhost:44394/Api/Alumnos/GetPorCurso/${id}`);
     }
 }

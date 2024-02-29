@@ -1,0 +1,10 @@
+<span class="radioClass">Muestra:</span>
+
+<input name="opciones" type="radio" value="Todos" [(ngModel)]="opcionElegida" (change)="cuandoCambiemos()"><!--para que funcione, hay que importar el import { FormsModule } from '@angular/forms'; el (change) es un onchange-->
+<span class="radioClass">{{'Todos(' + todos + ')'}}&nbsp;&nbsp;</span>
+
+<input name="opciones" type="radio" value="A" [(ngModel)]="opcionElegida" (change)="cuandoCambiemos()" >
+<span class="radioClass">{{'A(' + letraA + ')'}}&nbsp;&nbsp;</span>
+
+<input name="opciones" type="radio" value="B" [(ngModel)]="opcionElegida" (change)="cuandoCambiemos()">
+<span class="radioClass">{{'B(' + letraB + ')'}}&nbsp;&nbsp;</span>

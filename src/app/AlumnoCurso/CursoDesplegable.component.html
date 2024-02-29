@@ -1,0 +1,6 @@
+<select style="margin-left: 20px; margin-top: 20px; width: 90px;"
+        [(ngModel)]="seleccion" (change)="alSeleccionar($event)">
+    <option *ngFor="let curso of cursos" [ngValue]="curso"> 
+        {{curso.ano}} {{curso.letra}} 
+    </option>
+</select>
