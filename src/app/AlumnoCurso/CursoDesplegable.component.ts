@@ -28,6 +28,6 @@ export class CursoDesplegable  {
     CursoSeleccionado: EventEmitter<number> = new EventEmitter<number>()
 
     alSeleccionar(event: any): void {
-        this.CursoSeleccionado.emit(this.seleccion.cursoID); 
+        this.CursoSeleccionado.emit(this.seleccion.ID); 
     }
 }
