@@ -1,5 +1,10 @@
 <h2>Listado de Alumnos</h2>
-
+<cuantos-alumnos
+                [todos] ="getNumTodos()" 
+                [hombres]="getNumHombres()"
+                [mujeres]="getNumMujeres()"
+                (globalElegido)="alCambiar($event)">
+</cuantos-alumnos>
 <table>
   <thead>
     <tr>
@@ -13,7 +18,7 @@
   </thead>
   <tbody>
     <ng-container style="text-align: center;" *ngFor="let alumno of alumnos">
-        <tr>
+        <tr *ngIf="alumno.sexo == seleccion || seleccion == 'Todos'">
             <td>{{ alumno.ID}}</td>
             <td><a [routerLink]="['/Alumnos', alumno.ID]">{{alumno.nombre | uppercase | alumnoTitulo:alumno.sexo}} {{alumno.apellidos}}</a></td>
             <td>{{ alumno.sexo | alumnoSexo:alumno.sexo}}</td>
@@ -24,7 +29,7 @@
     </ng-container>
     
     <tr *ngIf="!alumnos || alumnos.length == 0">
-        <td colspan="4">No hay alumnos</td>
+        <td colspan="5">No hay alumnos</td>
     </tr>
 </tbody>
 </table>
